@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>My Photo Album</title>
+    <style>
+      /* Set the width of each image and add some margin */
+      img {
+        width: 100%;
+        margin: 10px;
+      }
+
+      /* Set the width of the photo album container */
+      .photo-album {
+        max-width: 1000px;
+        margin: 0 auto;
+      }
+
+      /* Create a grid with 1 column for mobile view */
+      .photo-grid {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 20px;
+}
+
+      /* Add breakpoints for larger screens */
+      @media screen and (min-width: 576px) {
+        .photo-grid {
+          grid-template-columns: repeat(2, 1fr);
+        }
+      }
+
+      @media screen and (min-width: 768px) {
+        .photo-grid {
+          grid-template-columns: repeat(3, 1fr);
+        }
+      }
+
+      @media screen and (min-width: 992px) {
+        .photo-grid {
+          grid-template-columns: repeat(4, 1fr);
+        }
+      }
+
+      /* Add some padding to the photo grid */
+      .photo-grid {
+        padding: 20px;
+      }
+
+      /* Center the text in the caption */
+      .caption {
+        text-align: center;
+      }
+
+      /* Style the top navigation bar */
+      .topnav {
+        background-color: #333;
+        overflow: hidden;
+      }
+
+      .topnav a {
+        float: left;
+        color: #f2f2f2;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+        font-size: 17px;
+      }
+
+      .topnav a:hover {
+        background-color: #ddd;
+        color: black;
+      }
+
+      .topnav a.active {
+        background-color: #4CAF50;
+        color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="topnav">
+      <a class="active" href="#">Home</a>
+      <a href="#">Gallery</a>
+      <a href="#">About</a>
+    </div>
+<h1>My Photo Album!</h1>
+<h4 style="text-align: center;">(Click on a image to modify it further)</h4>
+    <div class="photo-album">
+      <div class="photo-grid">
+<a href="new_window.html?img_src=https://th.bing.com/th/id/OIP.TRnoXLjxnhqpxPIb7TIHCgHaEo?w=276&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7" target="_blank">
+  <img src="https://th.bing.com/th/id/OIP.TRnoXLjxnhqpxPIb7TIHCgHaEo?w=276&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7" alt="My Image">
+</a>
+
+<a href="new_window.html?img_src=https://th.bing.com/th/id/OIP.pkHNB6e-8iaiPIRICzwmuAHaEo?w=276&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7" target="_blank">
+  <img src="https://th.bing.com/th/id/OIP.pkHNB6e-8iaiPIRICzwmuAHaEo?w=276&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7" alt="My Image">
+</a>
+<a href="new_window.html?img_src=https://th.bing.com/th/id/OIP.F79E_O-v9Dvz_j2xbErnsAHaEo?w=276&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7" target="_blank">
+  <img src="https://th.bing.com/th/id/OIP.F79E_O-v9Dvz_j2xbErnsAHaEo?w=276&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7" alt="My Image">
+</a>
+       
+<a href="new_window.html?img_src=https://th.bing.com/th/id/OIP.GpFHQ-znkwDV50-m45FyZwHaEo?w=276&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7" target="_blank">
+  <img src="https://th.bing.com/th/id/OIP.GpFHQ-znkwDV50-m45FyZwHaEo?w=276&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7" alt="My Image">
+</a>
+       
+<a href="new_window.html?img_src=https://th.bing.com/th/id/OIP.Z7K9vk44a1qrcH9lbn1ZNAHaEK?w=310&h=181&c=7&r=0&o=5&dpr=1.3&pid=1.7" target="_blank">
+  <img src="https://th.bing.com/th/id/OIP.Z7K9vk44a1qrcH9lbn1ZNAHaEK?w=310&h=181&c=7&r=0&o=5&dpr=1.3&pid=1.7" alt="My Image">
+</a>
+       
+<a href="new_window.html?img_src=https://th.bing.com/th/id/OIP.EISjUU0FiZSNzPCWTXdDYQHaEo?w=306&h=191&c=7&r=0&o=5&dpr=1.3&pid=1.7" target="_blank">
+  <img src="https://th.bing.com/th/id/OIP.EISjUU0FiZSNzPCWTXdDYQHaEo?w=306&h=191&c=7&r=0&o=5&dpr=1.3&pid=1.7" alt="My Image">
+</a>
+       
+<a href="new_window.html?img_src=https://th.bing.com/th/id/OIP.5EDKx65O_SRKAx-uGh38VQHaEK?w=322&h=181&c=7&r=0&o=5&dpr=1.3&pid=1.7" target="_blank">
+  <img src="https://th.bing.com/th/id/OIP.5EDKx65O_SRKAx-uGh38VQHaEK?w=322&h=181&c=7&r=0&o=5&dpr=1.3&pid=1.7" alt="My Image">
+</a>
+       
+<a href="new_window.html?img_src=https://th.bing.com/th/id/OIP.Z7K9vk44a1qrcH9lbn1ZNAHaEK?w=310&h=181&c=7&r=0&o=5&dpr=1.3&pid=1.7" target="_blank">
+  <img src="https://th.bing.com/th/id/OIP.Z7K9vk44a1qrcH9lbn1ZNAHaEK?w=310&h=181&c=7&r=0&o=5&dpr=1.3&pid=1.7" alt="My Image">
+</a>
+       
+<a href="new_window.html?img_src=https://th.bing.com/th/id/OIP.bJhsW5u6jwiFczp5OXNK9gHaEK?w=314&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7" target="_blank">
+  <img src="https://th.bing.com/th/id/OIP.bJhsW5u6jwiFczp5OXNK9gHaEK?w=314&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7" alt="My Image">
+</a>
+       
+<a href="new_window.html?img_src=https://th.bing.com/th/id/OIP.Owc2iCJH_czcyXz7JA7fKAHaEK?w=320&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7" target="_blank">
+  <img src="https://th.bing.com/th/id/OIP.Owc2iCJH_czcyXz7JA7fKAHaEK?w=320&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7" alt="My Image">
+</a>
+       
+<a href="new_window.html?img_src=https://th.bing.com/th/id/OIP.OFA5fLDAK-32OIxFEQ-XVAHaEK?w=277&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7" target="_blank">
+  <img src="https://th.bing.com/th/id/OIP.OFA5fLDAK-32OIxFEQ-XVAHaEK?w=277&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7" alt="My Image">
+</a>
+       
+<a href="new_window.html?img_src=https://th.bing.com/th/id/OIP.8exT_DyGNnZORDkSCAtxIAHaEo?w=306&h=182&c=7&r=0&o=5&dpr=1.3&pid=1.7" target="_blank">
+  <img src="https://th.bing.com/th/id/OIP.8exT_DyGNnZORDkSCAtxIAHaEo?w=306&h=182&c=7&r=0&o=5&dpr=1.3&pid=1.7" alt="My Image">
+</a>
+       
+<a href="new_window.html?img_src=https://th.bing.com/th/id/OIP.erAT7gT5-PXYEEST2DS-4AHaEy?w=283&h=182&c=7&r=0&o=5&dpr=1.3&pid=1.7" target="_blank">
+  <img src="https://th.bing.com/th/id/OIP.erAT7gT5-PXYEEST2DS-4AHaEy?w=283&h=182&c=7&r=0&o=5&dpr=1.3&pid=1.7" alt="My Image">
+</a>
+       
+<a href="new_window.html?img_src=https://th.bing.com/th/id/OIP.YVoIrhFJLkWf1JtNNXQETAHaE8?w=256&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7" target="_blank">
+  <img src="https://th.bing.com/th/id/OIP.YVoIrhFJLkWf1JtNNXQETAHaE8?w=256&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7" alt="My Image">
+</a>
+       
+<a href="new_window.html?img_src=https://th.bing.com/th/id/OIP.bLYHiChN4asLeX9Ib0EhlAHaEo?w=273&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7" target="_blank">
+  <img src="https://th.bing.com/th/id/OIP.bLYHiChN4asLeX9Ib0EhlAHaEo?w=273&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7" alt="My Image">
+</a>
+       
+<a href="new_window.html?img_src=https://th.bing.com/th/id/OIP.Ky-JdW_XbB4aN8VZDVWWxQHaEK?w=325&h=183&c=7&r=0&o=5&dpr=1.3&pid=1.7" target="_blank">
+  <img src="https://th.bing.com/th/id/OIP.Ky-JdW_XbB4aN8VZDVWWxQHaEK?w=325&h=183&c=7&r=0&o=5&dpr=1.3&pid=1.7" alt="My Image">
+</a>
+       
+       
+        
+      </div>
+    </div>
+<style>
+h1 {
+        text-align: center;
+      }
+</style>
+  </body>
+</html>

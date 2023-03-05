@@ -1,0 +1,114 @@
+<style>
+  .image-container {
+    display: inline-block;
+    margin-right: 20px;
+  }
+  .image-container img {
+    padding: 20px;
+  }
+</style>
+
+<div id="image-container">
+  <img id="image" src="" alt="My Image">
+ 
+</div>
+<div id="controls">
+  <button onclick="duplicateImage()">Duplicate Image</button>
+  <label for="brightness-slider">Brightness:</label>
+  <input type="range" id="brightness-slider" min="0" max="200" value="100" oninput="changeBrightness(this.value)">
+  <label for="resolution-slider">Resolution:</label>
+  <input type="range" id="resolution-slider" min="0" max="10" value="5" oninput="changeResolution(this.value)">
+  <button onclick="convertToGrayscale()">Convert to Grayscale</button>
+<button onclick="createGravatar()">Create Gravatar Avatar</button>
+
+</div>
+
+<script>
+  // Retrieve the value of the "img_src" query parameter from the URL
+  const urlParams = new URLSearchParams(window.location.search);
+  const imgSrc = urlParams.get('img_src');
+  
+  // Set the "src" attribute of the image element to the value of "imgSrc"
+  document.getElementById("image").src = imgSrc;
+function createGravatar() {
+  const image = document.getElementById('image');
+  const email = prompt('Enter your email:');
+  const hash = md5(email.trim().toLowerCase());
+  const gravatarUrl = `https://www.gravatar.com/avatar/${hash}?s=200&d=${encodeURIComponent(image.src)}`;
+  const gravatarImg = document.createElement('img');
+  gravatarImg.src = gravatarUrl;
+  document.getElementById('image-container').appendChild(gravatarImg);
+}
+  function duplicateImage() {
+    const container = document.getElementById('image-container');
+    const image = document.getElementById('image');
+    const newContainer = document.createElement('div');
+    const newImage = document.createElement('img');
+    newContainer.classList.add('image-container');
+    newContainer.appendChild(newImage);
+    newImage.src = image.src;
+    newImage.style.padding = '20px'; // Add padding to the new image element
+    container.insertAdjacentElement('afterend', newContainer);
+  }
+function generateQRCode() {
+  const image = document.getElementById('image');
+
+  // Create a canvas element
+  const canvas = document.createElement('canvas');
+  const ctx = canvas.getContext('2d');
+
+  // Set the canvas size to the image size
+  canvas.width = image.naturalWidth;
+  canvas.height = image.naturalHeight;
+
+  // Draw the image on the canvas
+  ctx.drawImage(image, 0, 0);
+
+  // Get the QR code data from the canvas
+  const qrCodeData = canvas.toDataURL('image/png');
+
+  // Create a new image element for the QR code
+  const qrCodeImage = document.createElement('img');
+  qrCodeImage.src = qrCodeData;
+
+  // Add the QR code image to the image container
+  const imageContainer = document.getElementById('image-container');
+  imageContainer.appendChild(qrCodeImage);
+}
+
+
+  function changeBrightness(value) {
+    const image = document.getElementById('image');
+    image.style.filter = `brightness(${value}%)`;
+  }
+
+  function interpolate(x, xMin, xMax, yMin, yMax) {
+    const range = xMax - xMin;
+    const value = (x - xMin) / range;
+    const result = yMin + value * (yMax - yMin);
+    return result;
+  }
+
+  function changeResolution(value) {
+    const image = document.getElementById('image');
+    const resolutionFactor = interpolate(value, 0, 10, 0.1, 2.0);
+    const originalWidth = image.naturalWidth;
+    const originalHeight = image.naturalHeight;
+    const newWidth = Math.round(originalWidth * resolutionFactor);
+    const newHeight = Math.round(originalHeight * resolutionFactor);
+    const aspectRatio = originalWidth / originalHeight;
+    const newAspectRatio = newWidth / newHeight;
+    if (newAspectRatio >= aspectRatio) {
+      image.style.width = `${originalWidth}px`;
+      image.style.height = `${Math.round(originalWidth / newAspectRatio)}px`;
+    } else {
+      image.style.width = `${Math.round(originalHeight * newAspectRatio)}px`;
+      image.style.height = `${originalHeight}px`;
+    }
+  }
+
+  function convertToGrayscale() {
+    const image = document.getElementById('image');
+    image.style.filter = 'grayscale(100%)';
+  }
+</script>
